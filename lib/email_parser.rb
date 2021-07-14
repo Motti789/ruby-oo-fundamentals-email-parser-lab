@@ -4,10 +4,15 @@
 # or whitespace (' ').
 require 'pry'
 class EmailAddressParser
+    attr_accessor :email_address
     
-    def initialize(parse)
-        @parse = parse
-        attr_accessor :email_address
+
+    def parse
+    p @email_address.split(/, | /).uniq
+    end 
+
+    def initialize(email_address)
+        @email_address = email_address
     end
 end      
 #binding.pry  
